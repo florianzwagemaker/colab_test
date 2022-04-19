@@ -1,4 +1,11 @@
 #!/bin/bash
+
+## fetch an example fastq file from ENA
+rm -rf /content/sample_data
+mkdir example_data
+wget -q ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR118/078/SRR11844878/SRR11844878_1.fastq.gz -O example_data/sars-cov-2_hong_kong_example.fastq.gz &
+
+## install miniconda and get some basic tools
 wget -q https://repo.anaconda.com/miniconda/Miniconda3-py37_4.11.0-Linux-x86_64.sh
 chmod +x Miniconda3-py37_4.11.0-Linux-x86_64.sh
 ./Miniconda3-py37_4.11.0-Linux-x86_64.sh -b -f -p /usr/local > /dev/null 2>&1
