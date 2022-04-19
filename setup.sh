@@ -3,10 +3,10 @@
 ## fetch an example fastq file from ENA
 rm -rf /content/sample_data
 mkdir example_data
-bash -c "$(wget -q ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR118/078/SRR11844878/SRR11844878_1.fastq.gz -O example_data/sars-cov-2_hong_kong_example.fastq.gz && echo 'Done with downloading the example data')" & 
+wget -q ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR118/078/SRR11844878/SRR11844878_1.fastq.gz -O example_data/sars-cov-2_hong_kong_example.fastq.gz & 
 
 ## fetch the reference genome from NCBI
-bash -c "$(wget -q https://raw.githubusercontent.com/RIVM-bioinformatics/SARS2seq/main/SARS2seq/workflow/files/MN908947.fasta -O example_data/sars-cov-2_referebce.fasta && echo 'Done with downloading the reference genome')" &
+wget -q https://raw.githubusercontent.com/RIVM-bioinformatics/SARS2seq/main/SARS2seq/workflow/files/MN908947.fasta -O example_data/sars-cov-2_reference.fasta &
 
 
 ## install miniconda and get some basic tools
